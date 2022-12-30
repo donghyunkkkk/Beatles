@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+*	 {margin:0; padding:0; box-sizing:border-box; }
+html {scroll-behavior: smooth; }
+html,body {font:16pt/180% "나눔 고딕"; }
+body {background-color:black; color:white;  }
+a 	 {text-decoration: none;  }
+::-webkit-scrollbar {
+	width:0;
+}
+
+.contaniner {
+	width: 100%;
+	max-width: 1480px;
+	padding: 0 20px;
+	margin: auto;
+	position: relative;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 0;
+	z-index: 3;
+}
+
+header h1 {
+	position: relative;
+	height: 40px;
+	margin: 0;
+	float: left;
+	z-index: 3;
+}
+
+header h1 img {
+	display: block;
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+
+.main-navigation {
+	float: right;
+	margin-right: 50px;
+}
+
+.main-navigation a {
+	color: #fff;
+	margin-left: 20px;
+}
+
+.main-navigation a.active {
+	font-weight: bold;
+	border-bottom: 2px solid #004fff;
+}
+
+.btn {
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	padding: 12px 20px;
+	border-radius: 8px;
+	background-color: #004fff;
+}
+
+.ghost-btn {
+	background-color: transparent;
+	border: 1px solid #004fff;
+}
+
+.hero-bg {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	/* overflow-x: hidden; */
+}
+
+.hero-bg .container {
+	height: 100%;
+}
+
+.video-wrap {
+	position: absolute;
+	left: 200px;
+	width: 1600px;
+	height: 100vh;
+	z-index:-1;
+}
+
+
+.video-wrap video {
+	position: absolute;
+	display: block;
+	width: 100%;
+}
+
+.more-btn {
+	display: none;
+}
+
+.tlt-wrap {
+	width: 50%;
+    padding: 240px 0px;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    z-index: 1;
+	margin:auto;
+}
+.tlt {
+	font-weight: bold;
+	width: 60%;
+	padding: 20px 0;
+	margin:auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	
+}
+.tlt a {
+	color: white;
+}
+.img {
+	display:block;
+	width: 500px;
+	height: 500px;
+	border-radius:20px;
+	margin:auto;
+}
+
+
+table {
+	position: absolute;
+	top: 0;
+	left: 5%;
+	padding: 240px 0px;
+}
+th, td {
+	border-bottom: 1px solid rgba(200,200,200, 0.5);
+	font-size: 0.85rem;
+	font-weight: normal;
+}
+.b {
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0 30px;
+}
+
+td img {
+	width: 25px;
+	margin-right:10px;
+	margin-left:5px;
+}
+td img:first-child {
+	width: 27px;
+	margin-top:2px;
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) { 
+	header {
+		padding: 0;
+		height: 56px;
+	}
+	header h1 {
+		height: 56px;
+	}
+	header h1 img {
+		top: 20px;
+		left: 20px;
+		height: 35px;
+	}
+	.main-navigation {
+		position: fixed;
+		top: 40px;
+		left: 0;
+		padding: 20px;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(5,5,5,0.9);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(100%);
+	}
+	.main-navigation.active {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+		transition: 0.3s;
+	}
+	
+	.main-navigation a {
+		display: block;
+		margin: auto;
+		margin-bottom: 8px;
+		padding: 12px;
+	}
+
+	.main-navigation a.btn {
+		text-align: center;
+	}
+
+	
+	.more-btn {
+		display: block;
+		position: absolute;
+		right: 12px;
+		top: 8px;
+		width: 40px;
+		height: 40px;
+		border-radius: 8px;
+		border: none;
+		background-color: transparent;
+	}
+	
+	.more-btn .icon {
+		display: block;
+		width: 24px;
+		height: 24px;
+		margin: 0 auto;
+		background:url("../assets/icon-menu.png") no-repeat center;
+		background-size: contain;
+	}
+	.more-btn.active .icon {
+		background:url("../assets/icon-close.png") no-repeat center;
+		background-size: contain;
+	}
+	.hero-bg {
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+	
+	.video-wrap {
+		top: 5vw;
+		left:-40%;
+		width:200%;
+	}
+	
+	.tlt-wrap {
+		width: 350px;
+		padding: 0px;
+		right: 0;
+		left: 0;
+		top: 20vh;
+		margin:auto;
+	}
+	.tlt {
+		font-size: 0.7rem;
+		width:100%;
+	}
+	.img {
+		display:block;
+		width:350px;
+		height:350px;
+	}
+	
+	
+	table {
+		width: 395px;
+		top:50vh;
+		left: 0;
+		margin: auto;
+	}
+	tbody {
+		margin:auto;
+	}
+	
+	td, th {
+		font-size: 0.7rem;
+	}
+	
+	.b {
+		font-size: 0.8rem;
+		
+	}
+} /***********************************************************************************/
